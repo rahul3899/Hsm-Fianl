@@ -7,16 +7,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-
-import com.hsm.model.Receptionist;
-import com.hsm.repository.ReceptionistRepository;
+import com.hsm.entity.Receptionist;
+import com.hsm.service.ReceptionService;
 @Controller
 public class ReceptionistController {
 	
 	
 	
 	@Autowired
-	ReceptionistRepository receptionistRepository;
+	ReceptionService receptionistRepository;
 	
 	@RequestMapping("receptionL")
 	String reception() {

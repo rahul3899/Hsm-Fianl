@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.hsm.model.Admin;
-import com.hsm.model.Doctor;
-import com.hsm.model.Patient;
+import com.hsm.entity.Admin;
+import com.hsm.entity.Doctor;
+import com.hsm.entity.Patient;
 import com.hsm.repository.AdminRepository;
 import com.hsm.repository.DoctorRepository;
 import com.hsm.repository.PatientRepository;

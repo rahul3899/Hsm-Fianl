@@ -1,7 +1,7 @@
 package com.hsm.controller;
 
 import java.util.List;
-import java.util.Optional;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,12 +12,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.hsm.model.Patient;
-import com.hsm.repository.PatientRepository;
+import com.hsm.entity.Patient;
+
+import com.hsm.service.PatientService;
 @Controller
 public class PatientController {
 	@Autowired
-	PatientRepository patient;
+	PatientService patient;
 
 	@RequestMapping("home")
 	String welcome() {
@@ -54,10 +55,10 @@ public class PatientController {
 	}
 	@RequestMapping("deletePatient")
 	ModelAndView deletePatient(@RequestParam("id") int id) {
-		Optional<Patient> p=patient.findById(id);
+		Patient p=patient.getById(id);
 		ModelAndView view=null;
 		if(p!=null) {
-			patient.deleteById(id);
+			patient.delete(p);
 			 view=new ModelAndView("Admin","success","Patient deleted");
 		}
 		else {

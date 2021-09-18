@@ -1,68 +1,84 @@
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<br>
-<br>
-<br>
-
-
+<html>
 <head>
 <title>New Account</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+<c:url value="/css/style2.css" var="jstlCss" />
+<link href="${jstlCss}" rel="stylesheet">
 
 </head>
-<h1 align="center">Add New Patient</h1>
+<h1 style="background-color: teal;" align="center">Add New Patient</h1>
+<div class="full-page" align="center">
+	<div class="navbar">
 
-<body class="hsm" style="background-color:powderblue;">
+		<nav>
+			<ul id='MenuItems'>
+				<li><a href='home'>Home</a></li>
+				<li><a href="receptionL">Receptionist</a></li>
+				<li><a href="adminLoginPage">Admin Login</a></li>
+
+
+			</ul>
+		</nav>
+	</div>
+	<br>
+	<body>
+		<hr>
+		<hr>
+
+
+
 
 	<form action="savePatient" method="post">
 	<table align="center">
 
 		<tr>
-			<td>Patient Id</td>
+			<td><h3 style="color:red; ">Patient Id:</h3></td>
 			<td><input type="text" name="id" required /></td>
-		</tr>
-		<tr>
-			<td>Name</td>
+			
+			<td ><h3 style="color:red; ">Name:</h3></td>
 			<td><input type="text" name="name" required
-				style="width: 158px;" /></td>
+			 /></td>
 		</tr>
+		
 		<tr>
-			<td>Phone Number</td>
+			<td><h3 style="color:red; ">Phone Number:</h3></td>
 			<td><input type="text" name="phoneNumber" placeholder="810...."
-				required /></td>
+				required /></td> <td><h3 style="color:red; ">Email Id:</h3></td>
+			<td><input type="text" name="emailId"></td>
 		</tr>
 
+		
 		<tr>
-			<td>Email Id</td>
-			<td><input type="text" name="emailId">
-		</tr>
-		<tr>
-			<td>Age</td>
-			<td><input type="text" name="age" required></td>
-		</tr>
-		<tr>
-			<td>Gender</td>
+			<td><h3 style="color:red; ">Age:</h3></td>
+			<td><input type="text" name="age" required></td><td><h3 style="color:red; ">Gender:</h3></td>
 			<td><input type="text" name="gender" required></td>
 		</tr>
 		<tr>
-			<td>Address</td>
-			<td><input type="text" name="address" required /></td>
+			
 		</tr>
 		<tr>
-			<td>Medical History</td>
+			<td><h3 style="color:red; ">Address</h3></td>
+			<td><input type="text" name="address" required /></td>	<td><h3 style="color:red; ">Medical History</h3></td>
 			<td><input type="text" name="medicalHistory" required /></td>
+		</tr>
+		<tr>
+		
 		</tr>
 
 		<tr>
 			<td><input type="Submit" name="submit" value="Submit"
-				style="width: 84px; height: 33px" /></td>
+				 /></td>
 
 			<td><input type="Reset" name="reset" value="Reset"
-				style="width: 84px; height: 33px" /></td>
+				 /></td>
 		</tr>
 
 
 	</table></form>
 
 </body>
+</div>
 </html>

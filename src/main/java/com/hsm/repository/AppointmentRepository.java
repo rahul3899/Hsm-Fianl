@@ -4,7 +4,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
 
-import com.hsm.model.Appointment;
+import com.hsm.entity.Appointment;
 @Component
 public interface AppointmentRepository extends JpaRepository<Appointment,Integer> {
 

@@ -10,15 +10,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.hsm.model.Appointment;
-import com.hsm.repository.AppointmentRepository;
+import com.hsm.entity.Appointment;
+
+import com.hsm.service.AppointmentService;
 
 
 
 @Controller
 public class AppointmentController {
 	@Autowired
-	AppointmentRepository appointmentRepository;
+	AppointmentService appointmentRepository;
+	@RequestMapping("AddnewAppointment")
+	String pageNew() {
+		return "SaveNewAppointment";
+	}
+	
+	
+	
 	
 	@RequestMapping(value="saveAppointment",method=RequestMethod.POST)
 	String saveAppointment(@ModelAttribute Appointment app) {

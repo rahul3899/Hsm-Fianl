@@ -1,32 +1,54 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-xmlns:th="http://www.thymeleaf.org">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+
 <head>
-<title> Cancel Appointments</title>
+<title>Cancel Appointments</title>
+<c:url value="/css/style.css" var="jstlCss" />
+<link href="${jstlCss}" rel="stylesheet">
+
 </head>
-<body style="background-color:powderblue;">
-<hr> <hr>
-	<H1 align="center">HOSPITAL</H1>
-	<hr> 
-<div align="center">
-        <h1>Cancel Appointment</h1>
-        <br />
-        <form action="DeleteAppointment"method="post">
- 
-            <table border="0" cellpadding="10">
-                <tr>
-                    <td>Appointment ID:</td>
-                    <td><input type="text" name="appointment_id" /></td>
-                </tr>
-                <tr>
-                <td> Note: This action can not be undone!</td>
-                </tr>
-                <tr>
-                    <td colspan="2"><button type="submit">Confirm</button> </td>
-                </tr>
-            </table>
-        </form>
-    </div>
-</body>
+<h2 align="left" style="text-transform: uppercase; background: teal;">Cancel
+	Appointment</h2>
+<div class="full-page" align="center">
+	<div class="navbar">
+
+		<nav>
+			<ul id='MenuItems'>
+				<li><a href='home'>Home</a></li>
+				<li><a href="receptionL">Receptionist</a></li>
+
+
+
+			</ul>
+		</nav>
+	</div>
+
+
+	<hr>
+	<hr>
+
+
+
+
+	<br />
+	<form action="DeleteAppointment" method="post">
+
+		<table>
+			<tr>
+				<td>Appointment ID:</td>
+				<td><input type="text" name="appointment_id"
+					required="required" /></td>
+			</tr>
+			<tr>
+				<td>Note: This action can not be undone!</td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="Confirm"></td>
+			</tr>
+		</table>
+	</form>
+</div>
+
 </html>
